@@ -1,0 +1,109 @@
+<html>
+<head>
+
+	<title>Desafio 3</title>
+
+	<link rel="stylesheet" href="style/style.css" />
+
+	<script src="script/script.js"></script>
+
+</head>
+<body>
+
+	<form>
+		<div id="namediv">
+			<label for="name">Nome: </label>
+			<input id="name" type="text" maxlength="30" onkeypress="return !(event.keyCode === 8 || event.charCode >= 48 && event.charCode <= 57)" onchange="setPreviewIntroductionText()"/>
+		</div>
+
+		<div id="lastnamediv">
+			<label for="lastname">Sobrenome: </label>
+			<input id="lastname" type="text" maxlength="30" onkeypress="return !(event.keyCode === 8 || event.charCode >= 48 && event.charCode <= 57)" onchange="setPreviewIntroductionText()"/>
+		</div>
+
+		<div id="agediv">
+			<label for="age">Idade: </label>
+			<input id="age" type="number" min="1" max="150" onkeypress="return event.keyCode === 8 || event.charCode >= 48 && event.charCode <= 57"/>
+		</div>
+
+		<div id="genderdiv">
+			<label for="male">Sexo: </label>
+
+			<input id="male" type="radio" name="gender" onclick="setPreviewIntroductionText()">
+			<label for="male">Masculino</label>
+
+			<input id="female" type="radio" name="gender" onclick="setPreviewIntroductionText()">
+			<label for="female">Feminino</label>
+		</div>
+
+		<div id="titlediv">
+			<label for="title">Titulo: </label>
+			<br />
+			<input id="title" type="text" maxlength="50" />
+		</div>
+
+		<div id="messagediv">
+			<label for="message">Mensagem: </label>
+			<br />
+			<textarea id="message" rows="5" cols="40" maxlength="200" onchange="setPreviewMessageText()"></textarea>
+		</div>
+	</form>
+
+	<div id="imagediv">
+		<label for="image1">Fundo da mensagem: </label>
+		<div>
+			<div>
+				<input id="image1" type="radio" name="image" value="./images/Insta.png" onclick="setPreviewMessageBackground()">
+				<label for="image1">
+					<img src="./images/Insta.png">
+				</label>
+			</div>
+
+			<div>
+				<input id="image2" type="radio" name="image" value="./images/Twitter.png" onclick="setPreviewMessageBackground()">
+				<label for="image2">
+					<img src="./images/Twitter.png">
+				</label>
+			</div>
+
+			<div>
+				<input id="image3" type="radio" name="image" value="./images/Youtube.png" onclick="setPreviewMessageBackground()">
+				<label for="image3">
+					<img src="./images/Youtube.png">
+				</label>
+			</div>
+
+			<div>
+				<input id="image4" type="radio" name="image" value="./images/Youtube.png" onclick="setPreviewMessageBackground()">
+				<label for="image4">
+					<img src="./images/Youtube.png">
+				</label>
+			</div>
+
+			<div>
+				<input id="image5" type="radio" name="image" value="./images/Youtube.png" onclick="setPreviewMessageBackground()">
+				<label for="image5">
+					<img src="./images/Youtube.png">
+				</label>
+			</div>
+
+			<div>
+				<input id="image6" type="radio" name="image" value="./images/Youtube.png" onclick="setPreviewMessageBackground()">
+				<label for="image6">
+					<img src="./images/Youtube.png">
+				</label>
+			</div>
+		</div>
+	</div>
+
+	<div><button onclick="showHidePreview()">Show/Hide Preview</button></div>
+
+	<div id="preview">
+		<p id="previewintroduction">Prezado, </p>
+		<textarea id="messagePreview" rows="6" cols="40" readonly></textarea>
+		<p id="previewending">Atenciosamente,<br> Vitor Salek</p>
+	</div>
+
+</body>
+
+</html>
